@@ -8,32 +8,26 @@ db = DB.getInstance()
 
 class Payment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    booking_id = db.Column(db.Integer, db.ForeignKey('booking.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
     payment_method = db.Column(db.String(255), nullable=False)
     amount = db.Column(db.Integer, nullable=False)
-    currency = db.Column(db.String(255), nullable=False)
     status = db.Column(db.Boolean, nullable=False)
     transaction_id = db.Column(db.Integer, nullable=False)
-    payment_gateway = db.Column(db.String(255), nullable=False)
     
-    def __init__(self, user_id, booking_id, payment_method, amount, currency, status, transaction_id, payment_gateway):
+    def __init__(self, user_id, payment_method, amount, status, transaction_id):
         self.user_id = user_id
-        self.booking_id = booking_id
         self.payment_method = payment_method
         self.amount = amount
-        self.currency = currency
         self.status = status
         self.transaction_id = transaction_id
-        self.payment_gateway = payment_gateway
 
     def __repr__(self) -> str:
         return "<Payment %r>" % self.id
 
     @staticmethod
-    def create(user_id, booking_id, payment_method, amount, currency, status, transaction_id, payment_gateway):
+    def create(user_id, payment_method, amount, status, transaction_id):
         try:
-            payment = Payment(user_id, booking_id, payment_method, amount, currency, status, transaction_id, payment_gateway)
+            payment = Payment(user_id, payment_method, amount, status, transaction_id)
             db.session.add(payment)
             db.session.commit()
             return True
@@ -48,13 +42,10 @@ class Payment(db.Model):
             payments = [
                 {
                     "user_id" : payment.user_id,
-                    "booking_id" : payment.booking_id,
                     "payment_method" : payment.payment_method,
                     "amount" : payment.amount,
-                    "currency" : payment.currency,
                     "status" : payment.status,
                     "transaction_id" : payment.transaction_id,
-                    "payment_gateway" : payment.payment_gateway,
                 }
                 for payment in query_result
             ]

@@ -22,7 +22,6 @@ class Booking(db.Model):
     status = db.Column(db.Integer, nullable=False)
     booking_time = db.Column(db.Integer, nullable=False)
     payment_status = db.Column(db.Integer, nullable=False)
-    booking_payment = db.relationship('Payment', backref="booking")
 
     def __init__(self, user_id, ticket_type, ticket_id, train_id, route_id, seat_number, 
                  booking_type, departure_time, arrival_time, status, booking_time, payment_status):

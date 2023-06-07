@@ -10,11 +10,11 @@ db = DB.getInstance()
 
 class Ticket(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    type = db.Column(db.String(255), nullable=False)
-    price = db.Column(db.Float, nullable=False)
+    type = db.Column(db.String(255), nullable=True)
+    price = db.Column(db.Float, nullable=True)
     route_id = db.Column(db.Integer, db.ForeignKey('route.id'), nullable=False)
     train_id = db.Column(db.Integer, db.ForeignKey('train.id'), nullable=False)
-    duration = db.Column(db.Integer, nullable=False)
+    duration = db.Column(db.Integer, nullable=True)
     
     def __init__(self, type, price, route_id, train_id, duration):
         self.type = type
