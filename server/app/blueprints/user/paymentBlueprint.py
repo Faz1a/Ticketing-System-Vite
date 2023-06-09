@@ -38,7 +38,7 @@ credit_cards = [
 
 @payment.route("/checkout", methods=['POST'])
 def checkout():
-    email = request.json["name"]
+    email = request.json["email"]
     card_number = request.json["card_number"]
     expiration_date = request.json["expiration_date"]
     cvc = request.json["cvc"]
@@ -46,17 +46,21 @@ def checkout():
     amount = request.json["amount"]
     
     success = False
-    card_check = {}
+    card_check = False
     
     user_exists = User.query.filter_by(email=email).first() is not None
     user = User.query.filter_by(email=email).first()
+    print(user)
+    transaction_id=str(uuid.uuid4())
+    payment_method = 'card'
     
     for card in credit_cards:
         if (card_number == card["card_number"] and name == card["name"] and cvc == card["cvc"] and expiration_date == card["expiration_date"]):
-            return card
+            card_check = True
+            message = card['message']
         
-    if user_exists and card is not None:
-        success = Payment.create(user_id=user.id, payment_method="card", amount=amount, transaction_id=str(uuid.uuid4()), status=card['message'])
+    if user_exists and card_check:
+        success = Payment.create(user.id, payment_method, amount, message, transaction_id)
     
     if success is not None:
         response = {'success': True, 'message': card['message']}
