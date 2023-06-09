@@ -12,16 +12,16 @@ class TravelCard(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
     duration = db.Column(db.Integer, nullable=False)
-    start_date = db.Column(db.Date, nullable=False)
-    end_date = db.Column(db.Date, nullable=False)
+    # start_date = db.Column(db.Date, nullable=False)
+    # end_date = db.Column(db.Date, nullable=False)
     is_active = db.Column(db.Boolean, nullable=False)
     price = db.Column(db.Integer, nullable=False)
     
-    def __init__(self, name, duration, start_date, end_date, is_active, price):
+    def __init__(self, name, duration, is_active, price):
         self.name = name
         self.duration = duration
-        self.start_date = start_date
-        self.end_date = end_date
+        # self.start_date = start_date
+        # self.end_date = end_date
         self.is_active = is_active
         self.price = price
 
@@ -29,9 +29,9 @@ class TravelCard(db.Model):
         return "<TravelCard %r>" % self.id
 
     @staticmethod
-    def create(name, duration, start_date, end_date, is_active, price):
+    def create(name, duration, is_active, price):
         try:
-            travelcard = TravelCard(name, duration, start_date, end_date, is_active, price)
+            travelcard = TravelCard(name, duration, is_active, price)
             db.session.add(travelcard)
             db.session.commit()
             return True
@@ -47,8 +47,6 @@ class TravelCard(db.Model):
                 {
                     "name" : travelcard.name,
                     "duration" : travelcard.duration,
-                    "start_date" : travelcard.start_date,
-                    "end_date" : travelcard.end_date,
                     "is_active" : travelcard.is_active,
                     "price" : travelcard.price,
                 }
