@@ -6,6 +6,10 @@ import Holidays from './pages/Holidays'
 import Contacts from './pages/Contacts'
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
+import Payment from './Pages/Payment'
+import PreplanedTrips from './Pages/PreplanedTrips'
+import TravelCards from './Pages/TravelCards'
+import SingleTicket from './Pages/SingleTicket'
 import {Booking} from './CRUD-components/Booking'
 import {Preplanned_Trip} from './CRUD-components/Preplanned-Trip'
 import {TrainRoute} from './CRUD-components/TrainRoute'
@@ -26,7 +30,11 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path='/payment' element={<Payment/>} />
+        <Route path='/travelcards' element={<TravelCards/>} />
+        <Route path='/singleticket' element={<SingleTicket/>} />
         <Route path="/timetable" element={<Timetable/>} />
+        <Route path="/preplanedtrips" element={<PreplanedTrips/>} />
         <Route path="/ticketsandcards" element={<TicketsandCards/>} />
         <Route path="/trainstations" element={<TrainStations/>} />
         <Route path="/holidays" element={<Holidays/>} />

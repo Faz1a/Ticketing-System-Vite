@@ -3,29 +3,49 @@ import Cards from '../components/Cards'
 import imgOne from '../assets/travel1.jpg'
 import imgTwo from '../assets/travel2.jpg'
 import imgThree from '../assets/travel3.jpg'
+import { Link, NavLink } from 'react-router-dom';
 
 const TicketsandCards = () => {
   return (
-    <div className='bg-gray-800 h-screen'>
+    <div className='bg-gray-800 h-[681px]'>
       <div className="flex justify-center">
-        <h1 className='text-4xl mt-10 text-yellow-400 font-rowdies'>Travelcards</h1>
+        <h1 className='text-4xl mt-10 text-yellow-400 font-rowdies'>Tickets and Cards</h1>
       </div>
       <div className="flex space-x-5 justify-center mt-10 font-rowdies ">
+      <Link
+        to ="/travelcards" >
       <Cards
       image={imgOne} 
-      title="Travelcard pruža neograničen pristup javnom prijevozu, omogućavajući vam istraživanje najpopularnijih atrakcija i znamenitosti grada u vlastitom ritmu."
-      description="Uz ovu karticu, možete slobodno putovati tramvajima, autobusima i vlakovima kako biste istražili sve što grad nudi. "/>
+      title="TRAVEL CARDS"
+      description="With this card, you can travel freely on trams, buses and trains to explore everything the cities have to offer. "
+      />
+      </Link>
+      <Link
+        to ="/singleticket" >
       <Cards 
       image={imgTwo}
-      title="Kupovinom karte možete započeti uzbudljivo putovanje kroz prekrasne krajolike, uranjajući u ljepotu i šarm odredišta"
-      description="Kupovina karte pružit će vam mogućnost da doživite nevjerojatne trenutke i stvorite uspomene koje će trajati cijeli život"/>
+      title="SINGLE TICKET"
+      description="Buying a ticket will give you the opportunity to experience incredible moments and create memories that will last a lifetime"
+      />
+      </Link>
+      <Link 
+      to="/preplanedtrips">
       <Cards 
       image={imgThree}
-      title="Travelcardi i karte pružaju praktičan i bezbrižan način kretanja po gradu, osiguravajući vam besprijekorno iskustvo putovanja uz uštedu vremena i novca"
-      description="Iskoristite pogodnosti putovanja bez brige o kupovini pojedinačnih karata ili planiranju ruta. Bez obzira jeste li turist koji istražuje ili lokalac koji se kreće po gradu."/>
+      title="PREPLAND TRIPS"
+      description="Enjoy the benefits of travel without having to worry about buying individual tickets or planning routes."
+      />
+      </Link>
       </div>
     </div>
   )
 }
 
 export default TicketsandCards
+
+/* <Link
+              to="/payment"
+              className="text-gray-300 mt-5 px-3 py-3 rounded-md text-base font-medium flex justify-center hover:text-yellow-300 "
+            >
+              Buy a Ticket
+      </Link>*/
