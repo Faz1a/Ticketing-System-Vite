@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Timetable from './pages/Timetable'
 import TicketsandCards from './pages/TicketsandCards'
@@ -23,7 +24,14 @@ import {User} from './CRUD-components/User'
 import {Login} from './user-authentication/login'
 import { Registration } from './user-authentication/registration';
 import {Route, Routes} from 'react-router-dom'
+{/*
+import AdminPannel from './Pages/AdminPannel'
+import AdminFields from './Pages/AdminFields'
+import AdminPayment from './Pages/AdminPayment'
+import AdminTenant from './Pages/AdminTenant'
+import AdminDashboard from './Pages/AdminDashboard'
 
+*/}
 const App = () => {
   return (
     <div className=' bg-gray-700'>
@@ -52,6 +60,19 @@ const App = () => {
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Registration />}/>
       </Routes>
+
+
+{/*
+    <AdminPannel/>
+    <Routes>
+      <Route>
+      <Route path="/dashboard" element={<AdminDashboard/>} />    
+      <Route path="/fields" element={<AdminFields/>} />
+      <Route path="/adminpayment" element={<AdminPayment/>} />
+      <Route path="/tenant" element={<AdminTenant/>} />
+      </Route>
+    </Routes>
+*/}
     </div>
   )
 }

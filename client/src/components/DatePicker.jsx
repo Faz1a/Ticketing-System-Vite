@@ -15,7 +15,7 @@ const DatePicker = () => {
                                 onChange={handleChange}
                                 ref={dateInputRef}
                         />
-                        <p className='text-xl ml-5 font-rowdies text-white'>Odabrani datum:</p>
+                        <p className='text-xl ml-5 font-rowdies text-white'>Selected date:</p>
                         <p className='text-xl ml-10 font-medium font-rowdies text-yellow-400'>{date}</p>
                 </div>
         );
