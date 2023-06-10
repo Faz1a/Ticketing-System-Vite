@@ -52,10 +52,10 @@ export function Train(){
     }
 
     return (
-    <div className="bg-slate-700 px-3 pb-2 pt-2 ">
-      <h1 className="text-white text-xl pl-5">Trains</h1>
+    <div className="bg-slate-700 px-3 pb-2 pt-2 h-screen">
+      <h1 className="text-white text-xl pl-5 flex justify-center">Trains</h1>
       <form action="submit" onSubmit={handleSubmit}>
-        <label className="p-4">Type
+        <label className="text-white p-4 flex justify-between">Type
           <input
             onChange={handleChangeType}
             type="text"
@@ -66,7 +66,7 @@ export function Train(){
           />
         </label>
 
-        <label className="p-4">Capacity
+        <label className="text-white p-4 flex justify-between">Capacity
         <input
           onChange={handleChangeCapacity}
           type="number"
@@ -78,7 +78,7 @@ export function Train(){
         </label>
 
 
-        <label className="p-4">Name
+        <label className="text-white p-4 flex justify-between">Name
         <input
           onChange={handleChangeName}
           type="text"
@@ -89,7 +89,7 @@ export function Train(){
         />
         </label>
 
-        <label className="p-4">Description
+        <label className="text-white p-4 flex justify-between">Description
         <input
           onChange={handleChangeDescription}
           type="text"
@@ -100,7 +100,7 @@ export function Train(){
         />
         </label>
 
-        <label className="p-4">Status
+        <label className="text-white p-4 flex justify-between">Status
         <input
           onChange={handleChageStatus}
           type="text"
@@ -115,9 +115,11 @@ export function Train(){
 
         
 
-        <button type="submit" className="bg-sky-500 text-white rounded-sm w-20 h-8">
+        <label className="flex justify-end">
+        <button type="submit" className="bg-yellow-300 text-white rounded-sm w-20 h-8 ">
           Submit
         </button>
+        </label>
       </form>
       
     </div>

@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import axios from "axios";
+
+const baseUrl = "http://localhost:5000"
 
 const Payment = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [cardNumber, setCardNumber] = useState('');
-  const [expiryDate, setExpiryDate] = useState('');
-  const [cvv, setCvv] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [card_number, setCardNumber] = useState("");
+  const [expiration_date, setExpirationDate] = useState("");
+  const [cvv, setCvv] = useState("");
+  const [eventList, setEventsList] = useState([])
+  const amount = 20;
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -19,17 +24,30 @@ const Payment = () => {
     setCardNumber(e.target.value);
   };
 
-  const handleExpiryDateChange = (e) => {
-    setExpiryDate(e.target.value);
+  const handleExpirationDateChange = (e) => {
+    setExpirationDate(e.target.value);
   };
 
   const handleCvvChange = (e) => {
     setCvv(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    try {
+      const data = await axios.post(`${baseUrl}/checkout`, {name, email, card_number, expiration_date, cvv,amount})
+      console.log(name, email, card_number, expiration_date, cvv,amount)
+      setEventsList([...eventList, data.data]);
+      setName('');
+      setEmail('');
+      setCardNumber('');
+      setExpirationDate('');
+      setCvv('');
+
+    } catch (error) {
+      console.error(error.message)
+    }
+    window.location.href = '/'
   };
 
   return (
@@ -55,7 +73,7 @@ const Payment = () => {
             Email
           </label>
           <input
-            type="email"
+            type="text"
             id="email"
             className="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             value={email}
@@ -64,28 +82,28 @@ const Payment = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="cardNumber" className="block mb-2 text-sm font-medium text-gray-700">
+          <label htmlFor="card_number" className="block mb-2 text-sm font-medium text-gray-700">
             Card Number
           </label>
           <input
             type="text"
-            id="cardNumber"
+            id="card_number"
             className="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-            value={cardNumber}
+            value={card_number}
             onChange={handleCardNumberChange}
             required
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="expiryDate" className="block mb-2 text-sm font-medium text-gray-700">
+          <label htmlFor="expiration_date" className="block mb-2 text-sm font-medium text-gray-700">
             Expiry Date
           </label>
           <input
             type="text"
-            id="expiryDate"
+            id="expiration_date"
             className="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-            value={expiryDate}
-            onChange={handleExpiryDateChange}
+            value={expiration_date}
+            onChange={handleExpirationDateChange}
             required
           />
         </div>

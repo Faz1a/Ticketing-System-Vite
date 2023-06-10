@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 const baseUrl = "http://localhost:5000"
 
 export function Schedule(){
@@ -65,10 +66,10 @@ export function Schedule(){
     }
 
     return (
-    <div className="bg-slate-700 px-3 pb-2 pt-2  ">
-      <h1 className="text-white text-xl pl-5">Schedule</h1>
+    <div className="bg-slate-700 px-3 pb-2 h-screen pt-2  ">
+      <h1 className="text-white text-xl pl-5 flex justify-center">Schedule</h1>
       <form action="submit" onSubmit={handleSubmit}>
-        <label className="p-4">Route ID
+        <label className="text-white p-4 flex justify-between">Route ID
           <input
             onChange={handelChangeRoute_id}
             type="number"
@@ -79,7 +80,7 @@ export function Schedule(){
           />
         </label>
 
-        <label className="p-4">Train ID
+        <label className="text-white p-4 flex justify-between">Train ID
         <input
           onChange={handleChangeTrain_id}
           type="number"
@@ -91,7 +92,7 @@ export function Schedule(){
         </label>
 
 
-        <label className="p-4">Departure station ID
+        <label className="text-white p-4 flex justify-between">Departure station ID
         <input
           onChange={handleChangeDeparture_station_id}
           type="number"
@@ -102,7 +103,7 @@ export function Schedule(){
         />
         </label>
 
-        <label className="p-4">Arrival station ID
+        <label className="text-white p-4 flex justify-between">Arrival station ID
         <input
           onChange={handleChageArrival_station_id}
           type="time"
@@ -113,7 +114,7 @@ export function Schedule(){
         />
         </label>
 
-        <label className="p-4">Stops
+        <label className="text-white p-4 flex justify-between">Stops
         <input
           onChange={handleChageStops}
           type="text"
@@ -124,7 +125,7 @@ export function Schedule(){
         />
         </label>
 
-        <label className="p-4">Departure time
+        <label className="text-white p-4 flex justify-between">Departure time
         <input
           onChange={handelChangeDeaprture_time}
           type="time"
@@ -135,7 +136,7 @@ export function Schedule(){
         />
         </label>
 
-        <label className="p-4">Arrival time
+        <label className="text-white p-4 flex justify-between">Arrival time
         <input
           onChange={handleChangeArrival_time}
           type="time"
@@ -147,7 +148,7 @@ export function Schedule(){
         </label>
 
 
-        <label className="p-4">Frequency
+        <label className="text-white p-4 flex justify-between">Frequency
         <input
           onChange={handleChangeFrequency}
           type="number"
@@ -159,10 +160,11 @@ export function Schedule(){
         </label>
 
 
-
-        <button type="submit" className="bg-sky-500 text-white rounded-sm w-20 h-8">
+        <label className="flex justify-end">
+        <button type="submit" className="bg-yellow-300 text-white rounded-sm w-20 h-8">
           Submit
         </button>
+        </label>
       </form>
 
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 const baseUrl = "http://localhost:5000"
 
 export function TrainRoute(){
@@ -69,10 +70,10 @@ export function TrainRoute(){
     }
 
     return (
-    <div className="bg-slate-700 px-3 pb-2 pt-2 ">
-      <h1 className="text-white text-xl pl-5">Routes</h1>
+    <div className="bg-slate-700 px-3 pb-2 pt-2 h-screen ">
+      <h1 className="text-white text-xl pl-5 flex justify-center">Routes</h1>
       <form action="submit" onSubmit={handleSubmit}>
-        <label className="p-4">Starting destination ID
+        <label className="text-white p-4 flex justify-between">Starting destination ID
           <input
             onChange={handelChangeStarting_station_id}
             type="number"
@@ -83,7 +84,7 @@ export function TrainRoute(){
           />
         </label>
 
-        <label className="p-4">Destination station ID
+        <label className="text-white p-4 flex justify-between">Destination station ID
         <input
           onChange={handelChangeDestination_station_id}
           type="number"
@@ -95,7 +96,7 @@ export function TrainRoute(){
         </label>
 
 
-        <label className="p-4">Train ID
+        <label className="text-white p-4 flex justify-between">Train ID
         <input
           onChange={handleChangeTrain_id}
           type="number"
@@ -106,7 +107,7 @@ export function TrainRoute(){
         />
         </label>
 
-        <label className="p-4">Departure time
+        <label className="text-white p-4 flex justify-between">Departure time
         <input
           onChange={handleChangeDeparture_time}
           type="time"
@@ -117,7 +118,7 @@ export function TrainRoute(){
         />
         </label>
 
-        <label className="p-4">Arrival time
+        <label className="text-white p-4 flex justify-between">Arrival time
         <input
           onChange={handleChangeArrival_time}
           type="time"
@@ -128,7 +129,7 @@ export function TrainRoute(){
         />
         </label>
 
-        <label className="p-4">Distance
+        <label className="text-white p-4 flex justify-between">Distance
         <input
           onChange={handleChangeDistance}
           type="number"
@@ -139,7 +140,7 @@ export function TrainRoute(){
         />
         </label>
 
-        <label className="p-4">Status
+        <label className="text-white p-4 flex justify-between">Status
         <input
           onChange={handleChangeStatus}
           type="text"
@@ -150,7 +151,7 @@ export function TrainRoute(){
         />
         </label>
 
-        <label className="p-4">Type
+        <label className="text-white p-4 flex justify-between">Type
         <input
           onChange={handleChangeType}
           type="text"
@@ -164,9 +165,11 @@ export function TrainRoute(){
 
         
 
-        <button type="submit" className="bg-sky-500 text-white rounded-sm w-20 h-8">
+        <label className="flex justify-end">
+        <button type="submit" className="bg-yellow-300 text-white rounded-sm w-20 h-8 ">
           Submit
         </button>
+        </label>
       </form>
       
     </div>
