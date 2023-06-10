@@ -41,7 +41,7 @@ def checkout():
     email = request.json["email"]
     card_number = request.json["card_number"]
     expiration_date = request.json["expiration_date"]
-    cvc = request.json["cvc"]
+    cvc = request.json["cvv"]
     name = request.json["name"]
     amount = request.json["amount"]
     
@@ -55,18 +55,21 @@ def checkout():
     
     for card in credit_cards:
         if (card_number == card["card_number"] and name == card["name"] and cvc == card["cvc"] and expiration_date == card["expiration_date"]):
-            card_check = True
+            break
     
     if(card['message'] == 'Payment Successful'):
         message = True
     else:
         message = False
         
-    if user_exists and card_check:
+    if user_exists:
         success = Payment.create(user.id, payment_method, amount, message, transaction_id)
+    else:
+        print('not possible')
     
     if success is not None:
         response = {'success': True, 'message': card['message']}
+        print(card)
         return make_response(jsonify(response), 201)
     else:
         response = {'success': False, 'message': "Payment Unsuccessful - "}

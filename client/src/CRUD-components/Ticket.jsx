@@ -52,10 +52,10 @@ export function Ticket(){
     }
 
     return (
-    <div className="bg-slate-700 px-3 pb-2 pt-2 ">
-      <h1 className="text-white text-xl pl-5">Tickets</h1>
+    <div className="bg-slate-700 px-3 pb-2 pt-2 h-screen">
+      <h1 className="text-white text-xl pl-5 flex justify-center">Tickets</h1>
       <form action="submit" onSubmit={handleSubmit}>
-        <label className="p-4">Type
+        <label className="text-white p-4 flex justify-between">Type
           <input
             onChange={handelChangeType}
             type="text"
@@ -66,7 +66,7 @@ export function Ticket(){
           />
         </label>
 
-        <label className="p-4">Price
+        <label className="text-white p-4 flex justify-between">Price
         <input
           onChange={handleChangePrice}
           type="number"
@@ -78,7 +78,7 @@ export function Ticket(){
         </label>
 
 
-        <label className="p-4">Route ID
+        <label className="text-white p-4 flex justify-between">Route ID
         <input
           onChange={handelChangeRoute_id}
           type="number"
@@ -89,7 +89,7 @@ export function Ticket(){
         />
         </label>
 
-        <label className="p-4">Train ID
+        <label className="text-white p-4 flex justify-between">Train ID
         <input
           onChange={handleChangeTrain_id}
           type="number"
@@ -100,7 +100,7 @@ export function Ticket(){
         />
         </label>
 
-        <label className="p-4">Duration
+        <label className="text-white p-4 flex justify-between">Duration
         <input
           onChange={handleChangeDuration}
           type="number"
@@ -115,9 +115,11 @@ export function Ticket(){
 
         
 
-        <button type="submit" className="bg-sky-500 text-white rounded-sm w-20 h-8">
+        <label className="flex justify-end">
+        <button type="submit" className="bg-yellow-300 text-white rounded-sm w-20 h-8 ">
           Submit
         </button>
+        </label>
       </form>
       
     </div>

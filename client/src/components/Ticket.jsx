@@ -1,7 +1,24 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import axios from 'axios'
+import {useState, useEffect} from 'react'
+
+const api  =  axios.create({
+  baseURL: 'http://127.0.0.1:5000/travel-cards'
+})
+
 
 const Ticket = () => {
+
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    api.get('').then(res => {
+      console.log(res.data);
+      setData(res.data)
+    });
+  }, []);
+
   return (
     <div className="flex justify-center mt-20 h-[601px]">
       <div>
@@ -26,24 +43,25 @@ const Ticket = () => {
                     scope="col"
                     className="px-6 py-3 text-left text-md font-bold text-gray-500 uppercase tracking-wider"
                   >
-                    ROUTE
+                    Duration
                   </th>
                   <th></th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
+              {data.map((item) => (
                 <tr>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm text-gray-900 font-bold">
-                      Travel Card
+                      {item.name}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900 font-bold">69 KM</div>
+                    <div className="text-sm text-gray-900 font-bold">{item.price}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm text-gray-900 font-bold">
-                      9 (nine)
+                    {item.duration} days
                     </div>
                   </td>
                   <td>
@@ -55,6 +73,7 @@ const Ticket = () => {
                     </Link>
                   </td>
                 </tr>
+                ))}
               </tbody>
             </table>
           </div>

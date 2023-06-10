@@ -55,10 +55,10 @@ export function Station(){
     }
 
     return (
-    <div className="bg-slate-700 px-3 pb-2 pt-2 ">
-      <h1 className="text-white text-xl pl-5">Services</h1>
+    <div className="bg-slate-700 px-3 pb-2 pt-2 h-screen">
+      <h1 className="text-white text-xl pl-5 flex justify-center">Services</h1>
       <form action="submit" onSubmit={handleSubmit}>
-        <label className="p-4">Name
+        <label className="text-white p-4 flex justify-between">Name
           <input
             onChange={handelChangeName}
             type="text"
@@ -69,7 +69,7 @@ export function Station(){
           />
         </label>
 
-        <label className="p-4">Code
+        <label className="text-white p-4 flex justify-between">Code
         <input
           onChange={handleChangeCode}
           type="text"
@@ -81,7 +81,7 @@ export function Station(){
         </label>
 
 
-        <label className="p-4">Address
+        <label className="text-white p-4 flex justify-between">Address
         <input
           onChange={handleChangeAddress}
           type="text"
@@ -92,7 +92,7 @@ export function Station(){
         />
         </label>
 
-        <label className="p-4">Longitude
+        <label className="text-white p-4 flex justify-between">Longitude
         <input
           onChange={handleChangeLongitude}
           type="text"
@@ -103,7 +103,7 @@ export function Station(){
         />
         </label>
 
-        <label className="p-4">Latitude
+        <label className="text-white p-4 flex justify-between">Latitude
         <input
           onChange={handleChangeLatitude}
           type="text"
@@ -114,22 +114,24 @@ export function Station(){
         />
         </label>
 
-        <label className="p-4">Is active
+        <label className="text-white p-4 flex justify-between">Is Active
         <input
           onChange={handleChangeIs_active}
-          type="number"
+          type="checkbox"
           id="is_active"
           name="is_active"
-          value={is_active}
+          value="true"
           class=" w-1/2 h-10 mr-96 mt-2 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
         />
         </label>
 
         
-
-        <button type="submit" className="bg-sky-500 text-white rounded-sm w-20 h-8">
+ 
+        <label className="flex justify-end">
+        <button type="submit" className="bg-yellow-300 text-white rounded-sm w-20 h-8 ">
           Submit
         </button>
+        </label>
       </form>
       
     </div>

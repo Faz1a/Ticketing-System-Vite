@@ -13,8 +13,8 @@ class Schedule(db.Model):
     departure_station_id = db.Column(db.Integer, db.ForeignKey('station.id'), nullable=False)
     arrival_station_id = db.Column(db.Integer, db.ForeignKey('station.id'), nullable=False)
     stops = db.Column(db.String(255), nullable=True)
-    departure_time = db.Column(db.Time, nullable=True)
-    arrival_time = db.Column(db.Time, nullable=True)
+    departure_time = db.Column(db.String(255), nullable=True)
+    arrival_time = db.Column(db.String(255), nullable=True)
     frequency = db.Column(db.Integer, nullable=True)
     
     def __init__(self, route_id, train_id, departure_station_id, arrival_station_id, stops, departure_time,

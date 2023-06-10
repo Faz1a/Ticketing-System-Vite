@@ -9,8 +9,8 @@ def serializer(stations):
     for station in stations:
         dict_object = station.__dict__
         dict_object.pop('_sa_instance_state')
-        stations.append(dict_object)
-    return stations
+        list_of_stations.append(dict_object)
+    return list_of_stations
 
 @station.route("/stations", methods = ['POST'])
 def create_station():

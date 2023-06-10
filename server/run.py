@@ -24,6 +24,7 @@ from app.blueprints.admin.userBlueprint import user
 from app.blueprints.user.registrationBlueprint import registration
 from app.blueprints.user.loginBlueprint import login
 from app.blueprints.user.paymentBlueprint import payment
+from app.blueprints.admin.travel_cardBlueprint import travelCard
 
 from flask_cors import CORS
 
@@ -42,6 +43,7 @@ app.register_blueprint(user, url_prefix="")
 app.register_blueprint(registration, url_prefix="")
 app.register_blueprint(login, url_prefix="")
 app.register_blueprint(payment, url_prefix="")
+app.register_blueprint(travelCard, url_prefix="")
 CORS(app, supports_credentials=True)
 
 

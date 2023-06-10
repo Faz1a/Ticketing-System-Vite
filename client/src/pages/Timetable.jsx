@@ -1,6 +1,22 @@
-import React from 'react'
+import axios from 'axios'
+import React, {useState, useEffect} from 'react'
+
+const api  =  axios.create({
+  baseURL: 'http://127.0.0.1:5000/schedules'
+})
 
 const Timetable = () => {
+
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    api.get('').then(res => {
+      console.log(res.data);
+      setData(res.data)
+    });
+  }, []);
+  
+
   return (
     <div>
       <div className="flex justify-center mt-20 h-[601px]">
@@ -38,47 +54,49 @@ const Timetable = () => {
                     scope="col"
                     className="px-6 py-3 text-left text-md font-bold text-gray-500 uppercase tracking-wider"
                   >
-                    STATION
+                    DEPARTURE TIME
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-md font-bold text-gray-500 uppercase tracking-wider"
                   >
-                    DEPARTURE TIME
+                    ARRIVAL TIME
                   </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
+              {data.map((item) => (
                 <tr>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm text-gray-900 font-bold">
-                      ///////////////
+                      {item.route_id}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900 font-bold">////////////</div>
+                    <div className="text-sm text-gray-900 font-bold">{item.train_id}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm text-gray-900 font-bold">
-                      /////////////////////////
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900 font-bold">
-                      /////////////////////////
+                    {item.departure_station_id}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm text-gray-900 font-bold">
-                      /////////////////////////
+                    {item.arrival_station_id}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm text-gray-900 font-bold">
-                      /////////////////////////
+                      {item.departure_time}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-900 font-bold">
+                      {item.arrival_time}
                     </div>
                   </td>
                 </tr>
+              ))}
               </tbody>
             </table>
           </div>

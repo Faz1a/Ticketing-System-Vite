@@ -8,10 +8,10 @@ db = DB.getInstance()
 
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), nullable=True)
-    description = db.Column(db.String(255), nullable=True)
-    price = db.Column(db.Float, nullable=True)
-    is_active = db.Column(db.Boolean, nullable=True)
+    name = db.Column(db.String(255), nullable=False)
+    description = db.Column(db.String(255), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    is_active = db.Column(db.Boolean, nullable=False)
     employee_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     
     def __init__(self, name, description, price, is_active, employee_id):
