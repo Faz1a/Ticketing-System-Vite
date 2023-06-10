@@ -35,7 +35,7 @@ export function Service(){
     const handleSubmit = async(e) => {
       e.preventDefault()
       try {
-        const data = await axios.post(`${baseUrl}/service`, {name,description,price,is_active,employee_id})
+        const data = await axios.post(`${baseUrl}/services`, {name,description,price,is_active,employee_id})
         setEventsList([...eventList, data.data]);
         setName('');
         setDescription('');

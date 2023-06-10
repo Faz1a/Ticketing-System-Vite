@@ -38,7 +38,7 @@ export function Ticket(){
     const handleSubmit = async(e) => {
       e.preventDefault()
       try {
-        const data = await axios.post(`${baseUrl}/ticket`, {type,price,route_id,train_id,duration})
+        const data = await axios.post(`${baseUrl}/tickets`, {type,price,route_id,train_id,duration})
         setEventsList([...eventList, data.data]);
         setType('');
         setPrice('');

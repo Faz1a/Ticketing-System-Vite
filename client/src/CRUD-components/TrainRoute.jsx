@@ -53,7 +53,7 @@ export function TrainRoute(){
     const handleSubmit = async(e) => {
       e.preventDefault()
       try {
-        const data = await axios.post(`${baseUrl}/route`, {starting_station_id,train_id,departure_time,arrival_time,distance,type,destination_station_id,status})
+        const data = await axios.post(`${baseUrl}/routes`, {starting_station_id,train_id,departure_time,arrival_time,distance,type,destination_station_id,status})
         setEventsList([...eventList, data.data]);
         setStarting_station_id('');
         setTrain_id('');

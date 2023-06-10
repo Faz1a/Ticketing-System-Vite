@@ -14,7 +14,7 @@ def serializer(routes):
 
 @route.route("/routes", methods = ['POST'])
 def create_route():
-    starting_station_id = request.json[' starting_station_id']
+    starting_station_id = request.json['starting_station_id']
     destination_station_id= request.json['destination_station_id']
     train_id = request.json['train_id']
     departure_time = request.json['departure_time']
