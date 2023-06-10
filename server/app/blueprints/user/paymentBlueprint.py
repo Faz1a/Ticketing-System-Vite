@@ -1,7 +1,7 @@
 from flask import Blueprint,  request, make_response, jsonify, session
 from app.models.db.payment import Payment
 from app.models.db.user import User
-import uuid
+import random
 
 payment = Blueprint("payment", __name__, static_folder="static", template_folder="template")
 
@@ -50,14 +50,17 @@ def checkout():
     
     user_exists = User.query.filter_by(email=email).first() is not None
     user = User.query.filter_by(email=email).first()
-    print(user)
-    transaction_id=str(uuid.uuid4())
+    transaction_id=str(random.randint(100000,999999))
     payment_method = 'card'
     
     for card in credit_cards:
         if (card_number == card["card_number"] and name == card["name"] and cvc == card["cvc"] and expiration_date == card["expiration_date"]):
             card_check = True
-            message = card['message']
+    
+    if(card['message'] == 'Payment Successful'):
+        message = True
+    else:
+        message = False
         
     if user_exists and card_check:
         success = Payment.create(user.id, payment_method, amount, message, transaction_id)

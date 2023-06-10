@@ -11,8 +11,8 @@ class Payment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
     payment_method = db.Column(db.String(255), nullable=False)
     amount = db.Column(db.Integer, nullable=False)
-    status = db.Column(db.Boolean, nullable=False)
-    transaction_id = db.Column(db.Integer, nullable=False)
+    status = db.Column(db.String(255), nullable=False)
+    transaction_id = db.Column(db.String(255), nullable=False)
     
     def __init__(self, user_id, payment_method, amount, status, transaction_id):
         self.user_id = user_id
