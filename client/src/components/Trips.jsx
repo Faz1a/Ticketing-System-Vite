@@ -9,7 +9,8 @@ import tripSix from '../assets/trip6.jpg'
 const Trips = () => {
     return (
         <div>
-            <h1 className='flex justify-center font-bold font-rowdies text-4xl mt-5 text-yellow-400'>Ideje za proljetne trenutke</h1>
+            <h1 className='flex justify-center font-bold font-rowdies text-4xl mt-5 text-yellow-400'>
+            Ideas for spring moments</h1>
             <div className='flex mt-2 mx-auto w-3/5 space-x-1  '>
                 <div>
                     <div className='absolute bg-gray-800 w-20 hover:'>

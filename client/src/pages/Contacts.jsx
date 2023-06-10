@@ -8,11 +8,11 @@ const Contacts = () => {
     <div>
       <div className="mx-auto mt-10">
         <h1 className='text-center text-4xl font-rowdies text-yellow-400'>
-        Pomoć i kontakt
+        Help and contact
         </h1>
         <div className="">
-          <p className='text-center text-lg mt-5 w-3/4 mx-auto font-rowdies'>
-          Trebate li pomoć pri kupovini karte ili putne karte, želite li povrat novca za kartu ili imate pitanje o temi vezanoj za SBB? Odgovore na svoja pitanja i saznati kako da nas kontaktirate možete pronaći ovdje na stranici podrške.
+          <p className='text-center text-lg mt-5 w-3/4 mx-auto font-rowdies text-gray-300'>
+          Do you need help buying a ticket or a travel ticket, do you want a refund for the ticket, or do you have a question about a topic related to SBB? You can find answers to your questions and find out how to contact us here on the support page.
           </p>
         </div>
       </div>
@@ -20,17 +20,18 @@ const Contacts = () => {
         <div className="w-72 h-36 border-white border-2 mt-10 hover:bg-gray-800 hover:text-yellow-400 cursor-pointer">
           <MdOutlineTram 
           className='w-14 h-14 mt-5 mx-auto'/>
-          <span className='flex justify-center mt-3 text-2xl'>Pitanja o kartama</span>
+          <span className='flex justify-center mt-3 text-2xl'>
+Questions about tickets</span>
         </div>
         <div className="w-72 h-36 border-white border-2 mt-10 hover:bg-gray-800 hover:text-yellow-400 cursor-pointer">
           <RiRefund2Line
           className='w-14 h-14 mt-5 mx-auto'/>
-          <span className='flex justify-center mt-3 text-2xl'>Kompenzacija</span>
+          <span className='flex justify-center mt-3 text-2xl'>Compensation</span>
         </div>
         <div className="w-72 h-36 border-white border-2 mt-10 hover:bg-gray-800 hover:text-yellow-400 cursor-pointer">
           <GiSchoolBag 
           className='w-14 h-14 mt-5 mx-auto'/>
-          <span className='flex justify-center mt-3 text-2xl'>Izgubljeno vlasništvo</span>
+          <span className='flex justify-center mt-3 text-2xl'>Lost stuff</span>
         </div>
       </div>
     </div>

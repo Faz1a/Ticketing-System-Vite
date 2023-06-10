@@ -6,11 +6,11 @@ const Holidays = () => {
       <div className="mx-auto mt-10">
         <h1 className='text-center text-4xl text-yellow-400 font-rowdies'>
           
-Slobodno vrijeme i praznici.
+        Free time and holidays.
         </h1>
         <div className="">
           <p className='text-center text-lg mt-5 w-3/4 mx-auto text-white'>
-          Javni prijevoz vam donosi povoljne ponude za slobodno vrijeme i odmor. Bilo da tražite jednodnevne izlete, događaje ili grupne izlete s RailAway sniženim cijenama, ili možda putovanje europskim vlakom ili kratke odmore uz hotelski smještaj, vi i vaša obitelj uvijek ćete pronaći nešto što vam odgovara.
+          Public transport brings you favorable offers for leisure and vacation. Whether you're looking for day trips, events or group tours with RailAway discounted fares, or perhaps European train travel or short breaks with hotel accommodation, you and your family will always find something to suit you.
           </p>
         </div>
       </div>

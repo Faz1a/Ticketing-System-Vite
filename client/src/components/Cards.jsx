@@ -3,7 +3,7 @@
 function Cards ({title,  image, description}){
 
     return(
-    <div className="w-96 h-[490px] bg-gray-300 hover:scale-110 hover: duration-500 cursor-pointer  ">
+    <div className="w-96 h-fit bg-gray-300 hover:scale-110 hover: duration-500 cursor-pointer  ">
         <div>
             <figure>
                 <img className="h-96" src={image} alt = "pda logo" />

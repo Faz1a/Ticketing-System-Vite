@@ -10,21 +10,21 @@ function Carousel() {
     const slides = [
         {
             url: SOne,
-            heading: "Razmatra se mogućnost dodatne kupovine novih tramvaja u Sarajevu",
-            text: "Ministarstvo saobraćaja Kantona Sarajevo razmatra dodatnu kupovinu novih tramvaja.",
-            button: "Saznaj više"
+            heading: "The possibility of additional purchase of new trams in Sarajevo is being considered",
+            text: "The Ministry of Transport of Sarajevo Canton is considering the additional purchase of new trams.",
+            button: "Find out more"
         },
         {
             url: STwo,
-            heading: "Počinje izgradnja tramvajske pruge od Ilidže do Hrasnice",
-            text: "Ministar saobraćaja Kantona Sarajevo Adnan Šteta (SDP) je izjavio da ove godine počinje izgradnja tramvajske pruge od Ilidže do Hrasnice.",
-            button: "Saznaj više"
+            heading: "The construction of the tram line from Ilidža to Hrasnica begins",
+            text: "The Minister of Transport of Sarajevo Canton, Adnan Šteta (SDP), said that the construction of the tram line from Ilidža to Hrasnica will begin this year.",
+            button: "Find out more"
         },
         {
             url: SThree,
-            heading: "Direktor GRAS-a: Rekonstruisana tramvajska pruga bit će upotrebljiva 60 godina",
-            text: "Direktor sarajevskog preduzeća GRAS Senad Mujagić je objasnio zašto nema dovoljno tramvaja",
-            button: "Saznaj više"
+            heading: "Director of GRAS: The reconstructed tram line will be usable for 60 years",
+            text: "The director of the Sarajevo company GRAS Senad Mujagić explained why there are not enough trams",
+            button: "Find out more"
         },
        
     ];

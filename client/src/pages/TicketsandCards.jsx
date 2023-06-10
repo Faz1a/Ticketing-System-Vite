@@ -33,7 +33,7 @@ const TicketsandCards = () => {
       <Cards 
       image={imgThree}
       title="PREPLAND TRIPS"
-      description="Enjoy the benefits of travel without having to worry about buying individual tickets or planning routes."
+      description="Enjoy the benefits of travel without having to worry about buying individual tickets or planning routes,free walking tour."
       />
       </Link>
       </div>
@@ -48,4 +48,4 @@ export default TicketsandCards
               className="text-gray-300 mt-5 px-3 py-3 rounded-md text-base font-medium flex justify-center hover:text-yellow-300 "
             >
               Buy a Ticket
-      </Link>*/
+</Link>*/

@@ -24,19 +24,22 @@ const Home = () => {
       </div>
       <div className="flex space-x-10 p-2 justify-center mt-5 font-rowdies ">
         <Cards
-          title="Razmatra se mogućnost dodatne kupovine novih tramvaja u Sarajevu"
+          title="The possibility of additional purchase of new trams in Sarajevo is being considered"
           image={Image6}
-          description="Ministarstvo saobraćaja Kantona Sarajevo razmatra dodatnu kupovinu novih tramvaja, a jedan od razloga za to jeste i produženje tramvajske pruge od Ilidže do Hrasnice koje bi uskoro trebalo početi.  "
+          description="
+          The Ministry of Transport of Sarajevo Canton is considering the additional purchase of new trams. "
         />
         <Cards
-          title="Ove godine počinje izgradnja tramvajske pruge od Ilidže do Hrasnice"
+          title="This year, the construction of the tram line from Ilidža to Hrasnica begins"
           image={Image5}
-          description="Ministar saobraćaja Kantona Sarajevo Adnan Šteta (SDP) je izjavio da ove godine počinje izgradnja tramvajske pruge od Ilidže do Hrasnice.  "
+          description="
+          The Minister of Transport of Sarajevo Canton, Adnan Šteta (SDP), said that the construction of the tram line from Ilidža to Hrasnica will begin. "
         />
         <Cards
-          title="Direktor GRAS-a: Rekonstruisana tramvajska pruga bit će upotrebljiva 60 godina"
+          title="Director of GRAS: The reconstructed tram line will be usable for 60 years"
           image={Image4}
-          description="Direktor sarajevskog preduzeća GRAS Senad Mujagić je objasnio zašto nema dovoljno tramvaja i kako se planira riješiti ovaj problem koji je posebno izražen u posljednjih nekoliko dana.  "
+          description="
+          The director of the Sarajevo company GRAS Senad Mujagić explained why there are not enough trams and how he plans to solve this problem. "
         />
     </div>
     <div className='flex justify-center text-3xl mt-10'>
