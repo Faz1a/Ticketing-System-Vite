@@ -46,7 +46,7 @@ export function User(){
     const handleSubmit = async(e) => {
       e.preventDefault()
       try {
-        const data = await axios.post(`${baseUrl}/user`, {name,email,password,date_of_birth,phone_number,role,address})
+        const data = await axios.post(`${baseUrl}/users`, {name,email,password,date_of_birth,phone_number,role,address})
         setEventsList([...eventList, data.data]);
         setName('');
         setEmail('');

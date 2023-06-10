@@ -25,7 +25,7 @@ def create_trip():
     stops = request.json['stops']
     duration = request.json['duration']
     price = request.json['price']
-    is_active = request.json['is_active']
+    is_active = True
     number_of_seats = request.json['number_of_seats']
     booked_seats = request.json['booked_seats']
     train_id = request.json['train_id']

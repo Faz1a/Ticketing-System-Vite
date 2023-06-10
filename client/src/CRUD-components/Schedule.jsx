@@ -49,7 +49,7 @@ export function Schedule(){
     const handleSubmit = async(e) => {
       e.preventDefault()
       try {
-        const data = await axios.post(`${baseUrl}/schedule`, {route_id, train_id, departure_station_id, arrival_station_id, stops, departure_time, arrival_time, frequency})
+        const data = await axios.post(`${baseUrl}/schedules`, {route_id, train_id, departure_station_id, arrival_station_id, stops, departure_time, arrival_time, frequency})
         setEventsList([...eventList, data.data]);
         setRoute_id('');
         setTrain_id('');
@@ -106,7 +106,7 @@ export function Schedule(){
         <label className="text-white p-4 flex justify-between">Arrival station ID
         <input
           onChange={handleChageArrival_station_id}
-          type="time"
+          type="number"
           id="arrival_station_id"
           name="arrival_station_id"
           value={arrival_station_id}

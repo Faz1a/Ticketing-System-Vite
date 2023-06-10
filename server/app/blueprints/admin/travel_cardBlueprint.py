@@ -16,13 +16,11 @@ def serializer(travelcards):
 def create_card():
     name = request.json['name']
     duration = request.json['duration']
-    start_date = request.json['start_date']
-    end_date = request.json['end_date']
-    is_active = request.json['is_active']
+    is_active = True
     price = request.json['price']
    
 
-    success = TravelCard.create( name, duration, start_date, end_date, is_active, price)
+    success = TravelCard.create( name, duration, is_active, price)
 
     if success:
         response = {'success': True, 'message': 'Travel card created successfully'}

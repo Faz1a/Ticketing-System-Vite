@@ -17,7 +17,7 @@ def create_service():
     name = request.json['name']
     description = request.json['description']
     price = request.json['price']
-    is_active = request.json['is_active']
+    is_active = True
     employee_id = request.json['employee_id']
    
 

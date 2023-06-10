@@ -38,7 +38,7 @@ export function Train(){
     const handleSubmit = async(e) => {
       e.preventDefault()
       try {
-        const data = await axios.post(`${baseUrl}/train`, {type,capacity,name,description,status})
+        const data = await axios.post(`${baseUrl}/trains`, {type,capacity,name,description,status})
         setEventsList([...eventList, data.data]);
         setType('');
         setName('');
