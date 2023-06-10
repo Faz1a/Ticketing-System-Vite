@@ -17,11 +17,11 @@ const Form = () => {
   }, []);
 
     return (
-      <div className="mt-5">
+      <div className="mt-5  ">
         <label className="flex justify-center space-x-1">
           
           <select
-            className="mt-8 h-10 md:mt-2 text-yellow-400 text-center bg-gray-800 border-gray-300 rounded-md shadow-sm  focus:border-yellow-400  focus:ring  focus:ring-yellow-500 "
+            className=" h-10  text-yellow-400 text-center bg-gray-800 border-gray-300 rounded-md shadow-sm  focus:border-yellow-400  focus:ring  focus:ring-yellow-500 "
             name="station"
           >
             <option value="0">Select Station</option>
@@ -30,10 +30,10 @@ const Form = () => {
             ))}
           </select>
           <label>
-            <span className="text-white lg:mr-2">do</span>
+            <h1 className='mt-2 text-white'>to</h1>
           </label>
           <select
-            className="mt-8 h-10 md:mt-2 text-yellow-400 text-center bg-gray-800 border-gray-300 rounded-md shadow-sm  focus:border-yellow-400  focus:ring  focus:ring-yellow-500 "
+            className=" h-10 text-yellow-400 text-center bg-gray-800 border-gray-300 rounded-md shadow-sm  focus:border-yellow-400  focus:ring  focus:ring-yellow-500 "
             name="station"
           >
             <option value="0">Select Station</option>
@@ -42,9 +42,7 @@ const Form = () => {
             ))}
           </select>
         </label>
-        <div className="w-44">
-              
-        </div>
+      
       </div>
     );
   };
