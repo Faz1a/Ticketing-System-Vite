@@ -13,7 +13,6 @@ import TravelCards from './Pages/TravelCards'
 import SingleTicket from './Pages/SingleTicket'
 import {Booking} from './CRUD-components/Booking'
 import {Preplanned_Trip} from './CRUD-components/Preplanned-Trip'
-import {TrainRoute} from './CRUD-components/TrainRoute'
 import {Schedule} from './CRUD-components/Schedule'
 import {Service} from './CRUD-components/Service'
 import {Station} from './CRUD-components/Station'
@@ -49,7 +48,6 @@ const App = () => {
         <Route path="/contacts" element={<Contacts/>} />
         <Route path='/admin/booking' element={<Booking />}/>
         <Route path='/admin/preplanned-trip' element={<Preplanned_Trip />}/>
-        <Route path='/admin/route' element={<TrainRoute />}/>
         <Route path='/admin/schedule' element={<Schedule />}/>
         <Route path='/admin/service' element={<Service />}/>
         <Route path='/admin/station' element={<Station />}/>

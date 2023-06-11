@@ -51,7 +51,7 @@ const Payment = () => {
   };
 
   return (
-    <div className='h-[601px]'>
+    <div className='h-[1102px]'>
     <div className="max-w-md mx-auto mt-20 p-6 bg-white rounded shadow-md">
       <h2 className="text-xl mb-4">Payment Details</h2>
       <form onSubmit={handleSubmit}>

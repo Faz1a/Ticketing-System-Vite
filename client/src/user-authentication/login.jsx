@@ -27,10 +27,10 @@ export function Login(){
    }
    
    return (
-      <div className="bg-slate-700 px-3 pb-2 pt-2 ">
+      <div className="bg-slate-700 h-[1102px] p-46">
       <h1 className="text-white text-xl pl-5">Log Into You Account</h1>
       <form>
-        <label className="p-4">Email
+        <label className="p-4 ">Email
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="email"

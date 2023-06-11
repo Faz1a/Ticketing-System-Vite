@@ -7,7 +7,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const TicketsandCards = () => {
   return (
-    <div className='bg-gray-800 h-[681px]'>
+    <div className='bg-gray-800 h-[1102px]'>
       <div className="flex justify-center">
         <h1 className='text-4xl mt-10 text-yellow-400 font-rowdies'>Tickets and Cards</h1>
       </div>

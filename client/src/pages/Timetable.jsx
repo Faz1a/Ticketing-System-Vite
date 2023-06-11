@@ -19,7 +19,7 @@ const Timetable = () => {
 
   return (
     <div>
-      <div className="flex justify-center mt-20 h-[601px]">
+      <div className="flex justify-center mt-20 h-screen">
       <div>
         <div className="py-2 align-middle inline-block sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">

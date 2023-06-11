@@ -3,7 +3,7 @@ import Ticket from '../components/Ticket'
 
 const TravelCards = () => {
   return (
-    <div><Ticket/></div>
+    <div className='h-[1102px]'><Ticket/></div>
   )
 }
 
